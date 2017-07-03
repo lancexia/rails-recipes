@@ -20,6 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 "en":
+  hello: "hi %{name},"
   event_list: Event List
   admin:
     event_list: Admin Event List

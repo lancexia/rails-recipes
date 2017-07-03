@@ -52,6 +52,11 @@
 
 
       <%= yield %>
+      <button type="button" class="btn-default"><%= link_to "中文版", :controller => controller_name, :action => action_name, :locale => "zh-CN" %></button>
+      <button type="button" class="btn-info"><%= link_to "English", :controller => controller_name, :action => action_name, :locale => "en" %></button>
+      <!-- <%= link_to "中文版", :controller => controller_name, :action => action_name, :locale => "zh-CN" %>
+      <%= link_to "English", :controller => controller_name, :action => action_name, :locale => "en" %> -->
+
     </div>
   </body>
 </html>

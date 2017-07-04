@@ -1,5 +1,8 @@
 <h1><%= @event.name %></h1>
 
 
-<%= simple_format @event.description %>
+
 <h2><%= display_event_status(@event) %></h2>
+<h2><%= @event.category.try(:name) %></h2>
+
+<%= simple_format @event.description %>

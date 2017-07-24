@@ -22,5 +22,7 @@
 "en":
   hello: "hi %{name},"
   event_list: Event List
+  bulk_update: update
+  bulk_delete: delete
   admin:
     event_list: Admin Event List

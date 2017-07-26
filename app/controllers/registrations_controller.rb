@@ -9,6 +9,7 @@ class RegistrationsController < ApplicationController
     @registration.ticket = @event.tickets.find( params[:registration][:ticket_id] )
     @registration.status = "pending"
     @registration.user = current_user
+    @registration.current_step = 1
 
     if @registration.save
       redirect_to step2_event_registration_path(@event, @registration)
@@ -27,6 +28,7 @@ class RegistrationsController < ApplicationController
 
   def step1_update
     @registration = @event.registrations.find_by_uuid(params[:id])
+    @registration.current_step = 1
 
     if @registration.update(registration_params)
       redirect_to step2_event_registration_path(@event, @registration)
@@ -41,6 +43,7 @@ class RegistrationsController < ApplicationController
 
     def step2_update
       @registration = @event.registrations.find_by_uuid(params[:id])
+      @registration.current_step = 2
 
       if @registration.update(registration_params)
         redirect_to step3_event_registration_path(@event, @registration)
@@ -56,6 +59,7 @@ class RegistrationsController < ApplicationController
     def step3_update
       @registration = @event.registrations.find_by_uuid(params[:id])
       @registration.status = "confirmed"
+      @registration.current_step = 3
 
       if @registration.update(registration_params)
         flash[:notice] = "报名成功"

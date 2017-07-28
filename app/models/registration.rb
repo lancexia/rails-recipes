@@ -1,4 +1,6 @@
 class Registration < ApplicationRecord
+  scope :by_status, ->(s){ where( :status => s ) }
+  scope :by_ticket, ->(t){ where( :ticket_id => t ) }
   attr_accessor :current_step
   validate :check_event_status, :on => :create
 

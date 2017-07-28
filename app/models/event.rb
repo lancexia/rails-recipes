@@ -17,6 +17,9 @@ class Event < ApplicationRecord
 
  belongs_to :category, :optional => true
 
+ scope :only_public, -> { where( :status => "public" ) }
+ scope :only_available, -> { where( :status => ["public", "private"] ) }
+
 
 
  def to_param

@@ -1,3 +1,9 @@
+<% if @event.images.present? %>
+    <% @event.images.each do |i| %>
+      <%= link_to image_tag(i.url(:small)), i.url %>
+    <% end %>
+  <% end %>
+
 <h1><%= @event.name %></h1>
 
 <p>

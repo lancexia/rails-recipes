@@ -15,6 +15,7 @@ class Registration < ApplicationRecord
   belongs_to :user, :optional => true
 
   before_validation :generate_uuid, :on => :create
+  has_paper_trail
 
   def to_param
     self.uuid

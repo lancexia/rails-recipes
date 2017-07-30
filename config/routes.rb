@@ -18,6 +18,12 @@ end
 
   namespace :admin do
     root "events#index"
+
+    resources :versions do
+       post :undo
+     end
+
+
     resources :events do
       resources :registrations, :controller => "event_registrations"
       resources :tickets, :controller => "event_tickets"
@@ -39,5 +45,8 @@ end
   get "/faq" => "pages#faq"
 
   resource :user
+
+
+
 
 end

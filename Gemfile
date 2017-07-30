@@ -55,6 +55,7 @@ gem 'paper_trail'
 gem 'rubyzip'
 gem 'axlsx'
 gem 'axlsx_rails'
+gem 'letter_opener'
 
 group :development, :test do
   gem 'rspec-rails'
